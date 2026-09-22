@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- the actual quiz card -->
+    <div class="editor-card" id="quizCard">
+
+      <!-- fake window titlebar, like a code editor -->
+      <div class="titlebar">
+        <div class="dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="filename">quiz.js</div>
+      </div>
+
+      <!-- progress bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="quiz-body">
+        <div class="meta-row">
+          <span class="line-no" id="lineNo">01</span>
+          <span class="q-counter" id="qCounter">Question 1 / 10</span>
+          <span class="total-timer" id="totalTimer">⏳ 5:00</span>
+        </div>
+
+        <h2 class="question-text" id="questionText">Loading question...</h2>
+
+        <!-- 30 second per-question countdown -->
+        <div class="timer-row">
+          <div class="timer-track">
+            <div class="timer-fill" id="questionTimerFill"></div>
+          </div>
+          <span class="timer-text" id="questionTimerText">30s</span>
+        </div>
+
+        <div class="options-grid" id="optionsGrid">
+          <!-- option buttons get injected here by script.js -->
+        </div>
+      </div>
+
+      <!-- manual navigation: move around without answering -->
+      <div class="nav-row">
+        <button class="prev-btn" id="prevBtn">← prev()</button>
+        <button class="next-btn" id="nextBtn">next() →</button>
+      </div>
+    </div>
+
+    <!-- result card, hidden until quiz ends -->
+    <div class="editor-card result-card hidden" id="resultCard">
+      <div class="titlebar">
+        <div class="dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="filename">result.js</div>
+      </div>
+
+      <div class="result-body">
+        <h2 id="resultTitle">Done!</h2>
+        <p id="resultMsg">You scored 0/10</p>
+        <button class="next-btn" id="restartBtn">restart()</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
